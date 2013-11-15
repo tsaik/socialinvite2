@@ -20,6 +20,9 @@ Social Invite API use Basic authentication to authenticate API requests.  Once y
 # Send Invitations
 The REST method for sending new invitations are accessible via following service endpoint:
 
+# Click-Through and Conversion Feedback Loop
+Hook Mobile constantly strives to improve the effectiveness of Social Invite Service.  We ask our customer to provide click-through and conversion data either in real-time or in batch (e.g. csv). 
+
 Production Server: 
 <pre><code>https://si.hookmobile.com/ws/invitation2</code></pre>
 
@@ -38,7 +41,7 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
 - <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.
 - <code>messageId</code> : (optional) Unique message Id assigned by customer.  Used in the callback.
-- 
+
 The ISO country code is used for normalizing phone numbers to international E164 format.  The ISO country code of mobile device is accessible via IOS and Android SDK.
 
 <H3>Response Status</H3>
