@@ -7,7 +7,7 @@ REST API for Social Invite
 # How It Works
 The Social Invite API will allow mobile app to invite friends via SMS. 
 Simply call our API with a personalized message and recipient phone number and let Social Invitation API take care of the rest. 
-Our service will apply host of filters, rules and scheduling to ahieve better consumer experience and better results.  
+Our service will apply host of filters, rules and scheduling to achieve better consumer experience and better campaign results.  
 Some of our features are highlighed as follow:
 
 1. Remove landline numbers
@@ -15,7 +15,7 @@ Some of our features are highlighed as follow:
 3. Rotate from a pool of numbers to send the list. Dedicated numbers supported.  Contact Hook Mobile for more details.
 4. Manage sleep time and insert time delay if necessary
 5. Manage opt out for each application
-6. Remove duplicate invitation to recipients
+6. Prevent duplicate invitations to recipient from same app in past 7 days 
 
 # Click-Through and Conversion Feedback Loop
 Hook Mobile constantly strives to improve the of Social Invite Service.  We ask our customer to provide click-through and conversion data either in real-time or in batch (e.g. csv). This continous loopback of data will help improve the accuracy and overall effectiveness of the Social Invite API Service.
