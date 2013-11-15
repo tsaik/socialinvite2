@@ -14,14 +14,22 @@ The Social Invite API will allow customer to submit a list of phone numbers, wit
 5. Manage opt out for each application
 6. Remove duplicate invitation to recipients
 
+# Click-Through and Conversion Feedback Loop
+Hook Mobile constantly strives to improve the of Social Invite Service.  We ask our customer to provide click-through and conversion data either in real-time or in batch (e.g. csv). This continous loopback of data will help improve the accuracy and overall effectiveness of the Social Invite API Service.
+If data is provided in CSV format, each row maps to a unique click-through or conversion event.  Following is the recommended format:
+
+<pre>phone,event,user-agent
+3012223333,click,Mozilla/5.0 (Linux; U; Android 4.2; xx-xx; GT-I9500 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+7033334444,conversion,Mozilla/5.0 (Linux; U; Android 4.0.4; pl-pl; Sony Xperia Neo V Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+</pre>
+
+Alternatively, the feedback can be accepted real-time via callback against Hook Mobile server.  
+
 # Authentication
 Social Invite API use Basic authentication to authenticate API requests.  Once you are provisioned with an account, you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will be using both the <code>apiKey</code> and the <code>secret</code> as Basic authentication username and password.
 
 # Send Invitations
 The REST method for sending new invitations are accessible via following service endpoint:
-
-# Click-Through and Conversion Feedback Loop
-Hook Mobile constantly strives to improve the effectiveness of Social Invite Service.  We ask our customer to provide click-through and conversion data either in real-time or in batch (e.g. csv). 
 
 Production Server: 
 <pre><code>https://si.hookmobile.com/ws/invitation2</code></pre>
