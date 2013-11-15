@@ -1,4 +1,4 @@
-Social Invite API
+Social Invite API 2.0
 ============
 
 REST API for Social Invite
@@ -9,7 +9,7 @@ The Social Invite API will allow customer to submit a list of phone numbers, wit
 
 1. Remove landline numbers
 2. Remove known feature phone numbers
-3. Rotate from a pool of numbers to send the list
+3. Rotate from a pool of numbers to send the list. Dedicated numbers supported.  Contact Hook Mobile for more details.
 4. Manage sleep time and insert time delay if necessary
 5. Manage opt out for each application
 6. Remove duplicate invitation to recipients
@@ -65,9 +65,6 @@ In event of unsuccessful or Status 4XX Code scenario, the JSON data contains fol
 - <code>code</code> : Error code
 - <code>message</code> : Detailed error description
 
-<H3>Error Codes</H3>
-TBD
-
 <H3>Examples of valid API requests using cURL utility:</H3>
 In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
 
@@ -108,9 +105,6 @@ In event of unsuccessful or Status 4XX Code scenario, the JSON data contains fol
 
 - <code>code</code> : Error code
 - <code>message</code> : Detailed error description
-
-<H3>Error Codes</H3>
-TBD
 
 <H3>Examples of valid API requests using cURL utility:</H3>
 In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
