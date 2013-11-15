@@ -5,7 +5,10 @@ REST API for Social Invite
 
 
 # How It Works
-The Social Invite API will allow customer to submit a list of phone numbers, with variable to attach sender name, content of SMS and customizable URL; and our system will handle sending the messages based on following criteria:
+The Social Invite API will allow mobile app to invite friends via SMS. 
+Simply call our API with a personalized message and recipient phone number and let Social Invitation API take care of the rest. 
+Our service will apply host of filters, rules and scheduling to ahieve better consumer experience and better results.  
+Some of our features are highlighed as follow:
 
 1. Remove landline numbers
 2. Remove known feature phone numbers
@@ -46,8 +49,8 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>phone</code> : (required) recipient phone number.
 - <code>osType</code> : (required) Targeting criteria based on mobile OS. Possible values are: <code>IOS</code>,<code>ANDROID</code>,<code>IOS_ANDROID</code>
 - <code>message</code> : (required) Invitation message.  
-- <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
 - <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.
+- <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
 - <code>messageId</code> : (optional) Unique message Id assigned by customer.  Used in the callback.
 
 The ISO country code is used for normalizing phone numbers to international E164 format.  The ISO country code of mobile device is accessible via IOS and Android SDK.
