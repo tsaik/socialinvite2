@@ -71,7 +71,7 @@ In event of unsuccessful or Status 4XX Code scenario, the JSON data contains fol
 <H3>Examples of valid API requests using cURL utility:</H3>
 In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
 
-<pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;messageId=8s3k3g" "http://dev.wupima.com:7060/ws/invitation"</code></pre>
+<pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;messageId=8s3k3g" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
 <H3>Callback</H3>
 Optionally, Social Invite Service can issue callback to your server to notify status update of previously submitted request.
@@ -84,8 +84,6 @@ The callback request will be an HTTP GET request containing following query para
 # Query Invitation Status
 The REST method for querying status of previously sent invitation is accessible via following service endpoint:
 
-Beta Server: 
-<pre><code>http://dev.wupima.com:7071/ws/invitation/{id}</code></pre>
 Production Server: 
 <pre><code>https://si.hookmobile.com/ws/invitation/{id}</code></pre>
 
@@ -112,7 +110,7 @@ In event of unsuccessful or Status 4XX Code scenario, the JSON data contains fol
 <H3>Examples of valid API requests using cURL utility:</H3>
 In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
 
-<pre><code>curl --user myApikey:mySecret "http://si.hookmobile.com/ws/invitation2/3"</code></pre>
+<pre><code>curl --user myApikey:mySecret "https://si.hookmobile.com/ws/invitation2/3"</code></pre>
 
 
 
