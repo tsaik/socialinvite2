@@ -51,7 +51,7 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>message</code> : (required) Invitation message.  
 - <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.
 - <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
-- <code>messageId</code> : (optional) Unique message Id assigned by customer.  Used in the callback.
+- <code>referenceId</code> : (optional) Unique id assigned by customer to each message.  Used in the callback.
 
 The ISO country code is used for normalizing phone numbers to international E164 format.  The ISO country code of mobile device is accessible via IOS and Android SDK.
 
@@ -61,7 +61,7 @@ Upon invoking this method, client shall receive HTTP Status Code 200, indicating
 <H3>Response Body</H3>
 The HTTP response body shall contain data in JSON format. For successful or Status Code 200 scenario, the JSON data contains following name value pairs:
 
-- <code>id</code> : Tracking identifier assigned to the submitted request.  You may use this tracking identifier to query for delivery status.
+- <code>messageId</code> : Tracking identifier assigned to the submitted request.  You may use this tracking identifier to query for delivery status.
 
 In event of unsuccessful or Status 4XX Code scenario, the JSON data contains following name value pairs:
 
@@ -75,11 +75,14 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <H3>Callback</H3>
 Optionally, Social Invite Service can issue callback to your server to notify status update of previously submitted request.
-The callback request will be an HTTP GET request containing following query parameters;
+The callback request will be an HTTP GET request to your designated URL.  Your URL may contain following variables, which will be
+replaced with actual value during callback:
 
--  <code>id</code> : id from Social Invite request submission.
--  <code>messageId</code> : message id supplied by customer from Social Invite request submission.  This value may be empty if original request was not submitted with <code>messageId</code> parameter.
-
+-  <code>{messageId}</code> : id from Social Invite request submission.
+-  <code>{referenceId}</code> : reference id supplied by customer from Social Invite request submission.  This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
+-  <code>{phone}</code> : phone number
+-  <code>{status}</code> : final status code. 1=delivered, 100+=failure
+-  <code>{completionDate}</code> : Completion date in UNIX millisecond
 
 # Query Invitation Status
 The REST method for querying status of previously sent invitation is accessible via following service endpoint:
