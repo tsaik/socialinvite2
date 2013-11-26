@@ -19,7 +19,7 @@ Some of our features are highlighed as follow:
 
 # Click-Through Feedback Loop
 Hook Mobile constantly strives to improve the of Social Invite Service.  We ask our customer to provide click-through 
-data in real-time or in batch (e.g. csv). This continous loopback of data will help improve the accuracy and overall 
+data in real-time. This continous loopback of data will help improve the routing, accuracy and overall 
 effectiveness of the Social Invite API Service.  We will aggregate the click-through data into our analytic dashboard.
 
 # How To Get Started
