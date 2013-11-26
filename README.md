@@ -36,7 +36,7 @@ The next step is to begin integrating against our simple REST-based API.  You wi
 logic integrate with your service:
 
 - Send Invitation : You are the REST client, Social Invite is the REST server.
-- Receive Invitation Status : You are the REST server, Social Invite is the REST client.
+- Receive Invitation Delivery Status : You are the REST server, Social Invite is the REST client.
 - Report Click-Through : You are the REST client, Social Invite is the REST server.
 
 # Authentication
@@ -85,7 +85,7 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;messageId=8s3k3g" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
-<H3>Callback</H3>
+<H3>Receive Invitation Delivery Status</H3>
 Optionally, Social Invite Service can issue callback to your server to notify status update of previously submitted request.
 The callback request will be an HTTP GET request to your designated URL.  Your URL may contain following variables, which will be
 replaced with actual value during callback:
