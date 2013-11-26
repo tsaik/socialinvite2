@@ -26,7 +26,8 @@ If data is provided in CSV format, each row maps to a unique click-through or co
 7033334444,conversion,Mozilla/5.0 (Linux; U; Android 4.0.4; pl-pl; Sony Xperia Neo V Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
 </pre>
 
-Alternatively, the feedback can be accepted real-time via callback against Hook Mobile server.  
+Alternatively, the feedback can be accepted real-time via callback against Hook Mobile server.  We recommend customer to 
+report back click through event via callback so data will be captured in our analytics portal.  
 
 # Authentication
 Social Invite API use Basic authentication to authenticate API requests.  Once you are provisioned with an account, you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will be using both the <code>apiKey</code> and the <code>secret</code> as Basic authentication username and password.
@@ -115,5 +116,39 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <pre><code>curl --user myApikey:mySecret "https://si.hookmobile.com/ws/invitation2/3"</code></pre>
 
+# Notifying Click-Through Action
+The REST method for notifying Hook Mobile of click-through of an invitation. This method accessible via following service endpoint:
+
+Production Server: 
+<pre><code>https://si.hookmobile.com/ws/click</code></pre>
+
+<H3>HTTP Method</H3>
+POST
+
+<H3>Content Type</H3>
+application/x-www-form-urlencoded
+
+<H3>Form Variables</H3>
+Here are the valid variables defined for this operation.  Be sure to apply appropriate URL encoding to each form variable value.
+
+- <code>messageId</code> : id from Social Invite request submission.
+- <code>referenceId</code> : reference id supplied by customer from Social Invite request submission.  This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
+- <code>userAgent</code> : Mobile device browser user-agent captured from click-through.
+
+NOTE: You must provide either <code>messageId</code> or <code>referenceId</code> in the callback.
+
+<H3>Response Status</H3>
+Upon invoking this method, client shall receive HTTP Status Code 200, indicating server has accepted your notification. 
+If Client receive HTTP Status Code 4XX, it means server did not accept the request.
+
+In event of unsuccessful or Status 4XX Code scenario, the JSON data contains following name value pairs:
+
+- <code>code</code> : Error code
+- <code>message</code> : Detailed error description
+
+<H3>Examples of valid notification requests using cURL utility:</H3>
+In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
+
+<pre><code>curl --user myApikey:mySecret --data "messageId=234234&amp;userAgent=Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%206_0_2%20like%20Mac%20OS%20X)%20AppleWebKit%2F536.26%20(KHTML%2C%20like%20Gecko)%20Version%2F6.0%20Mobile%2F10A551%20Safari%2F8536.25" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
 
