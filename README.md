@@ -47,7 +47,7 @@ you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will
 The REST method for sending new invitations are accessible via following service endpoint:
 
 Production Server: 
-<pre><code>https://si.hookmobile.com/ws/invitation2</code></pre>
+<pre><code>https://si.hookmobile.com/ws/invitation</code></pre>
 
 <H3>HTTP Method</H3>
 POST
@@ -83,7 +83,7 @@ In event of unsuccessful or Status 4XX Code scenario, the JSON data contains fol
 <H3>Examples of valid API requests using cURL utility:</H3>
 In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
 
-<pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;messageId=8s3k3g" "https://si.hookmobile.com/ws/invitation"</code></pre>
+<pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;referenceId=8s3k3g" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
 <H3>Receive Invitation Delivery Status</H3>
 Optionally, Social Invite Service can issue callback to your server to notify status update of previously submitted request.
