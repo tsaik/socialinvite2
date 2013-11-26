@@ -98,7 +98,7 @@ replaced with actual value during callback:
 -  <code>{completionDate}</code> : Completion date in UNIX millisecond
 
 
-# Repoorting Back Invitation Click-Through
+# Reporting Back Invitation Click-Through
 The REST method for customer to notify Hook Mobile of invitation click-through. This method accessible via following service endpoint:
 
 Production Server: 
