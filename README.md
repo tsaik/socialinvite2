@@ -89,13 +89,13 @@ replaced with actual value during callback:
 The REST method for querying status of previously sent invitation is accessible via following service endpoint:
 
 Production Server: 
-<pre><code>https://si.hookmobile.com/ws/invitation/{id}</code></pre>
+<pre><code>https://si.hookmobile.com/ws/invitation/{messageId}</code></pre>
 
 <H3>HTTP Method</H3>
 GET
 
 <H3>Path Parameter</H3>
-To query status of a particular invitation request, you must append the tracking id or <code>{id}</code> of the invitation request.
+To query status of a particular invitation request, you must append the tracking id or <code>{messageId}</code> of the invitation request.
 
 <H3>Response Status</H3>
 Upon invoking this method, client shall receive HTTP Status Code 200, indicating server has accepted and queued the request. If Client receive HTTP Status Code 4XX, it means server did not accept the request.
