@@ -62,8 +62,9 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>osType</code> : (required) Targeting criteria based on mobile OS. Possible values are: <code>IOS</code>,<code>ANDROID</code>,<code>IOS_ANDROID</code>
 - <code>message</code> : (required) Invitation message.  
 - <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.  This identifier must be privisioned into our sytem prior to using the API.
-- <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
-- <code>referenceId</code> : (optional) Unique id assigned by customer to each message.  Used in the callback.
+- <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  
+- <code>senderPhone</code> : (optional) Inviter phone number.
+- <code>referenceId</code> : (optional) Unique id assigned by customer to each message.
 
 The ISO country code is used for normalizing phone numbers to international E164 format.  The ISO country code of mobile device is accessible via IOS and Android SDK.
 
