@@ -10,27 +10,38 @@ Simply call our API with a personalized message and recipient phone number and l
 Our service will apply host of filters, rules and scheduling to achieve better consumer experience and better campaign results.  
 Some of our features are highlighed as follow:
 
-1. Remove landline numbers
-2. Remove known feature phone numbers
+1. Remove landline numbers.
+2. Remove known feature phone numbers.
 3. Rotate from a pool of numbers to send the list. Dedicated numbers supported.  Contact Hook Mobile for more details.
-4. Manage sleep time and insert time delay if necessary
-5. Manage opt out for each application
-6. Prevent duplicate invitations to recipient from same app in past 7 days 
+4. Manage sleep time to ensure invitation are sent during day time.
+5. Manage opt out for each application.
+6. Prevent duplicate invitations to recipient from same app in past 7 days .
 
-# Click-Through and Conversion Feedback Loop
-Hook Mobile constantly strives to improve the of Social Invite Service.  We ask our customer to provide click-through and conversion data either in real-time or in batch (e.g. csv). This continous loopback of data will help improve the accuracy and overall effectiveness of the Social Invite API Service.
-If data is provided in CSV format, each row maps to a unique click-through or conversion event.  Following is the recommended format:
+# Click-Through Feedback Loop
+Hook Mobile constantly strives to improve the of Social Invite Service.  We ask our customer to provide click-through 
+data in real-time or in batch (e.g. csv). This continous loopback of data will help improve the accuracy and overall 
+effectiveness of the Social Invite API Service.  We will aggregate the click-through data into our analytic dashboard.
 
-<pre>phone,event,user-agent
-3012223333,click,Mozilla/5.0 (Linux; U; Android 4.2; xx-xx; GT-I9500 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
-7033334444,conversion,Mozilla/5.0 (Linux; U; Android 4.0.4; pl-pl; Sony Xperia Neo V Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
-</pre>
+# How To Get Started
+Please contact Hook Mobile to request for new Social Invite API account.  We will need following information for provisioning:
 
-Alternatively, the feedback can be accepted real-time via callback against Hook Mobile server.  We recommend customer to 
-report back click through event via callback so data will be captured in our analytics portal.  
+- Company name
+- Email
+- Mobile app identifier (Android Market App ID or iTunes app ID)
+- Callback URL for receiving invitation message status (Optional)
+
+We will then assign you set of credential for accessing our API as well as login credential for analytic dashboard.
+
+The next step is to begin integrating against our simple REST-based API.  You will need to build both REST client and server 
+logic integrate with your service:
+
+- Send Invitation : You are the REST client, Social Invite is the REST server.
+- Receive Invitation Status : You are the REST server, Social Invite is the REST client.
+- Report Click-Through : You are the REST client, Social Invite is the REST server.
 
 # Authentication
-Social Invite API use Basic authentication to authenticate API requests.  Once you are provisioned with an account, you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will be using both the <code>apiKey</code> and the <code>secret</code> as Basic authentication username and password.
+Social Invite API use Basic authentication to authenticate API requests.  Once you are provisioned with an account, 
+you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will be using both the <code>apiKey</code> and the <code>secret</code> as Basic authentication username and password.
 
 # Send Invitations
 The REST method for sending new invitations are accessible via following service endpoint:
@@ -50,7 +61,7 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>phone</code> : (required) recipient phone number.
 - <code>osType</code> : (required) Targeting criteria based on mobile OS. Possible values are: <code>IOS</code>,<code>ANDROID</code>,<code>IOS_ANDROID</code>
 - <code>message</code> : (required) Invitation message.  
-- <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.
+- <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.  This identifier must be privisioned into our sytem prior to using the API.
 - <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  - <code>senderPhone</code> : (optional) Inviter phone number.
 - <code>referenceId</code> : (optional) Unique id assigned by customer to each message.  Used in the callback.
 
