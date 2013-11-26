@@ -116,8 +116,8 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <pre><code>curl --user myApikey:mySecret "https://si.hookmobile.com/ws/invitation2/3"</code></pre>
 
-# Notifying Click-Through Action
-The REST method for notifying Hook Mobile of click-through of an invitation. This method accessible via following service endpoint:
+# Repoorting Back Invitation Click-Through
+The REST method for customer to notify Hook Mobile of invitation click-through. This method accessible via following service endpoint:
 
 Production Server: 
 <pre><code>https://si.hookmobile.com/ws/click</code></pre>
@@ -151,4 +151,21 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <pre><code>curl --user myApikey:mySecret --data "messageId=234234&amp;userAgent=Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%206_0_2%20like%20Mac%20OS%20X)%20AppleWebKit%2F536.26%20(KHTML%2C%20like%20Gecko)%20Version%2F6.0%20Mobile%2F10A551%20Safari%2F8536.25" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
+# Status Codes
+
+- <code>0</code> : Invitation request accepted 
+- <code>1</code> : Invitation delivered
+- <code>2</code> : Invitation clicked
+
+- <code>100</code> : Permission denied 
+- <code>101</code> : Invalid parameter(s) in your API call
+- <code>102</code> : Missing parameter(s) in your API call
+- <code>103</code> : Resource not found
+
+- <code>123</code> : Invalid phone
+- <code>124</code> : Send failed
+- <code>125</code> : Not a mobile phone
+- <code>126</code> : Mobile device not compatible
+- <code>127</code> : User opted-out
+- <code>128</code> : Duplicate invitation
 
