@@ -114,10 +114,10 @@ application/x-www-form-urlencoded
 Here are the valid variables defined for this operation.  Be sure to apply appropriate URL encoding to each form variable value.
 
 - <code>messageId</code> : id from Social Invite request submission.
-- <code>referenceId</code> : reference id supplied by customer from Social Invite request submission.  This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
-- <code>userAgent</code> : Mobile device browser user-agent captured from click-through.
+- <code>referenceId</code> : reference id supplied by customer from Social Invite request submission. This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
+- <code>userAgent</code> : Mobile device browser user-agent captured from click-through. This information is generally passed as HTTP header variable <code>HTTP_USER_AGENT</code> to your server.
 
-NOTE: You must provide either <code>messageId</code> or <code>referenceId</code> in the callback.
+NOTE: You must provide either <code>messageId</code> OR <code>referenceId</code> parameter in order to help us correlate to the original invitation request.
 
 <H3>Response Status</H3>
 Upon invoking this method, client shall receive HTTP Status Code 200, indicating server has accepted your notification. 
