@@ -97,36 +97,6 @@ replaced with actual value during callback:
 -  <code>{status}</code> : final status code. 1=delivered, 100+=failure
 -  <code>{completionDate}</code> : Completion date in UNIX millisecond
 
-# Query Invitation Status
-The REST method for querying status of previously sent invitation is accessible via following service endpoint:
-
-Production Server: 
-<pre><code>https://si.hookmobile.com/ws/invitation/{messageId}</code></pre>
-
-<H3>HTTP Method</H3>
-GET
-
-<H3>Path Parameter</H3>
-To query status of a particular invitation request, you must append the tracking id or <code>{messageId}</code> of the invitation request.
-
-<H3>Response Status</H3>
-Upon invoking this method, client shall receive HTTP Status Code 200, indicating server has accepted and queued the request. If Client receive HTTP Status Code 4XX, it means server did not accept the request.
-
-<H3>Response Body</H3>
-The HTTP response body shall contain data in JSON format. For successful or Status Code 200 scenario, the JSON data contains following name value pairs:
-
-- <code>processedDate</code> : Date request was processed. Format is UNIX Epoch Time.
-- <code>status</code> : Status of request. Possible values: <code>pending</code>, <code>sent</code>, <code>discarded</code>. 
-
-In event of unsuccessful or Status 4XX Code scenario, the JSON data contains following name value pairs:
-
-- <code>code</code> : Error code
-- <code>message</code> : Detailed error description
-
-<H3>Examples of valid API requests using cURL utility:</H3>
-In this example, the customer has been assigned <code>apiKey</code> = "myApiKey" and <code>secret</code> = "mySecret".  
-
-<pre><code>curl --user myApikey:mySecret "https://si.hookmobile.com/ws/invitation2/3"</code></pre>
 
 # Repoorting Back Invitation Click-Through
 The REST method for customer to notify Hook Mobile of invitation click-through. This method accessible via following service endpoint:
