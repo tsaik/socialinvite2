@@ -43,7 +43,7 @@ logic integrate with your service:
 Social Invite API use Basic authentication to authenticate API requests.  Once you are provisioned with an account, 
 you will be assigned an <code>apiKey</code> and a <code>secret</code>.  You will be using both the <code>apiKey</code> and the <code>secret</code> as Basic authentication username and password.
 
-# Send Invitations
+# Send Invitation
 The REST method for sending new invitations are accessible via following service endpoint:
 
 Production Server: 
