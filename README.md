@@ -64,7 +64,7 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 - <code>appId</code> : (required) Android Market Application Id or iTune App Store App Id.  This identifier must be privisioned into our sytem prior to using the API.
 - <code>isoCountryCode</code> : (optional, default to "US") Inviter ISO country code.  
 - <code>senderPhone</code> : (optional) Inviter phone number.
-- <code>referenceId</code> : (optional) Unique id assigned by customer to each message.
+- <code>referenceId</code> : (optional) Reference identifier assigned to this request.  
 
 The ISO country code is used for normalizing phone numbers to international E164 format.  The ISO country code of mobile device is accessible via IOS and Android SDK.
 
