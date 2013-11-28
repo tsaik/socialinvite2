@@ -86,7 +86,7 @@ In this example, the customer has been assigned <code>apiKey</code> = "myApiKey"
 
 <pre><code>curl --user myApikey:mySecret --data "message=Download+this+awsome+game+http://goo.gl/XYZ&amp;phone=3012223333&amp;osType=ANDROID&amp;appId=com.mediocre.sprinklefree&amp;referenceId=8s3k3g" "https://si.hookmobile.com/ws/invitation"</code></pre>
 
-<H3>Receive Invitation Delivery Status</H3>
+# Receive Invitation Delivery Status
 Optionally, Social Invite Service can issue callback to your server to notify status update of previously submitted request.
 The callback request will be an HTTP GET request to your designated URL.  Your URL may contain following variables, which will be
 replaced with actual value during callback:
