@@ -97,6 +97,11 @@ replaced with actual value during callback:
 -  <code>{status}</code> : final status code. 1=delivered, 100+=failure
 -  <code>{completionDate}</code> : Completion date in UNIX millisecond
 
+<H3>Examples of Notification URL:</H3>
+In this example, the customer provided a callback URL with above mentioned variables <code>referenceId</code> and <code>status</code> embedded.  
+
+<pre><code>http://acme.com/callback?tx_id={referenceId}&status_code={status}</code></pre>
+
 
 # Reporting Back Invitation Click-Through
 The REST method for customer to notify Hook Mobile of invitation click-through. This method accessible via following service endpoint:
@@ -115,7 +120,7 @@ Here are the valid variables defined for this operation.  Be sure to apply appro
 
 - <code>messageId</code> : id from Social Invite request submission.
 - <code>referenceId</code> : reference id supplied by customer from Social Invite request submission. This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
-- <code>userAgent</code> : Mobile device browser user-agent captured from click-through. This information is generally passed as HTTP header variable <code>HTTP_USER_AGENT</code> to your server.
+- <code>userAgent</code> : (Optional) Mobile device browser user-agent captured from click-through. This information is generally passed as HTTP header variable <code>HTTP_USER_AGENT</code> to your server.
 
 NOTE: You must provide either <code>messageId</code> OR <code>referenceId</code> parameter in order to help us correlate to the original invitation request.
 
