@@ -93,9 +93,9 @@ replaced with actual value during callback:
 
 -  <code>{messageId}</code> : id from Social Invite request submission.
 -  <code>{referenceId}</code> : reference id supplied by customer from Social Invite request submission.  This value may be empty if original request was not submitted with <code>referenceId</code> parameter.
--  <code>{phone}</code> : phone number
+-  <code>{phone}</code> : phone number.
 -  <code>{status}</code> : final status code. 1=delivered, 100+=failure
--  <code>{completionDate}</code> : Completion date in UNIX millisecond
+-  <code>{completeDate}</code> : Timestamp (in UNIX millisecond) when message reached final state.
 
 <H3>Examples of Notification URL:</H3>
 In this example, the customer provided a callback URL with above mentioned variables <code>referenceId</code> and <code>status</code> embedded.  
